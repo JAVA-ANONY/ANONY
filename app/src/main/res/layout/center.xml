@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,14 +9,18 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/part1"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/ulsanjunggu"
             android:gravity="center"
             android:text="1학년"
             android:textSize="20dp"
@@ -28,6 +32,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/part2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/part1"
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:paddingLeft="40dp"
@@ -44,14 +51,17 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/part3"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/part2">
 
         <TextView
             android:id="@+id/text2"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/ulsanjunggu"
             android:gravity="center"
             android:text="2학년"
             android:textSize="20dp"
@@ -63,10 +73,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/part4"
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:paddingLeft="40dp"
-        android:paddingRight="40dp">
+        android:paddingRight="40dp"
+        app:layout_constraintTop_toBottomOf="@id/part3">
 
         <ListView
             android:id="@+id/listview2"
@@ -79,14 +91,17 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/part5"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/part4">
 
         <TextView
             android:id="@+id/text3"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/ulsanjunggu"
             android:gravity="center"
             android:text="3학년"
             android:textSize="20dp"
@@ -101,7 +116,8 @@
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:paddingLeft="40dp"
-        android:paddingRight="40dp">
+        android:paddingRight="40dp"
+        app:layout_constraintTop_toBottomOf="@id/part5">
 
         <ListView
             android:id="@+id/listview3"
@@ -114,8 +130,23 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:background="@color/main" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ImageButton
+        android:id="@+id/writing_btn"
+        android:src="@drawable/writingicon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/whitecircle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

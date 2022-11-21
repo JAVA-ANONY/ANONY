@@ -32,7 +32,7 @@ class ListViewAdapter : BaseAdapter() {
         }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        val iconImageView = view?.findViewById(R.id.imageView1) as ImageButton
+        val iconImageView = view!!.findViewById(R.id.imageView1) as ImageButton
         val titleTextView = view.findViewById(R.id.textView1) as TextView
         val descTextView = view.findViewById(R.id.textView2) as TextView
 

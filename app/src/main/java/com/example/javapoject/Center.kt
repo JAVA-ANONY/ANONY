@@ -1,8 +1,11 @@
 package com.example.javapoject
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -11,6 +14,16 @@ class Center : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.center)
+
+        val intent = Intent(this, WritingActivity::class.java)
+
+        //버튼 지정
+        val buttonView = findViewById<ImageButton>(R.id.writing_btn)
+        //클릭리스너
+        buttonView.setOnClickListener {
+            //액티비티 이동
+            startActivity(intent)
+        }
 
         val listview: ListView
         val adapter: ListViewAdapter
@@ -115,7 +128,6 @@ class Center : AppCompatActivity() {
 
                 val title = item.titleStr
                 val desc = item.descStr
-                val icon = item.iconDrawable
 
                 // TODO : use item data.
             }

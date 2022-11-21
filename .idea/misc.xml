@@ -7,12 +7,16 @@
         <entry key="..\:/JavaPoject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1375" />
         <entry key="..\:/JavaPoject/app/src/main/res/drawable/like.xml" value="0.192" />
         <entry key="..\:/JavaPoject/app/src/main/res/drawable/shape_for_circle_btn.xml" value="0.1245" />
+        <entry key="..\:/JavaPoject/app/src/main/res/drawable/whitecircle.xml" value="0.2" />
+        <entry key="..\:/JavaPoject/app/src/main/res/font/font.xml" value="0.22958529286019666" />
         <entry key="..\:/JavaPoject/app/src/main/res/layout/activity_main.xml" value="0.128" />
-        <entry key="..\:/JavaPoject/app/src/main/res/layout/center.xml" value="0.2" />
-        <entry key="..\:/JavaPoject/app/src/main/res/layout/listview_item.xml" value="0.264" />
+        <entry key="..\:/JavaPoject/app/src/main/res/layout/activity_writing.xml" value="0.1" />
+        <entry key="..\:/JavaPoject/app/src/main/res/layout/center.xml" value="0.4" />
+        <entry key="..\:/JavaPoject/app/src/main/res/layout/listview_item.xml" value="0.536" />
         <entry key="..\:/JavaPoject/app/src/main/res/layout/writing.xml" value="0.2484375" />
         <entry key="..\:/JavaPoject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.192" />
         <entry key="..\:/JavaPoject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.192" />
+        <entry key="..\:/Users/USER/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/activity_list_item.xml" value="0.20478837109876016" />
       </map>
     </option>
   </component>
