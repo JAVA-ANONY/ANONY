@@ -1,13 +1,15 @@
 package com.example.javapoject
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
 
 class WritingActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.writing)
@@ -47,5 +49,16 @@ class WritingActivity : AppCompatActivity() {
                 }
             }
         }
+
+        var edittext = findViewById<EditText>(R.id.editText)
+        val txtCnt = findViewById<TextView>(R.id.txtCnt)
+
+        edittext.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                txtCnt.setText(s.length.toString() + " / 300") //글자수 TextView에 보여주기.
+            }
+        })
     }
 }

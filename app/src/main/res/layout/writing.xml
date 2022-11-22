@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,51 +13,66 @@
         android:scaleType="fitXY">
 
         <EditText
-            android:background="#ffffff"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:hint="제목을 입력해주세요"
+            android:textSize="24dp"
+            android:maxLength="15"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.13"
-            android:layout_width="320dp"
-            android:layout_height="80dp"/>
+            app:layout_constraintVertical_bias="0.13" />
 
         <Spinner
             android:id="@+id/spinner"
-            app:layout_constraintHorizontal_bias="0.85"
-            app:layout_constraintVertical_bias="0.23"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_width="120dp"
-            android:layout_height="30dp"/>
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
 
         <EditText
-            android:background="#ffffff"
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="410dp"
+            android:hint="내용을 입력해주세요"
+            android:gravity = 'top|left'
+            android:maxLength="300"
+            android:maxLines="12"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.7"
-            android:layout_width="300dp"
-            android:layout_height="500dp"/>
+            app:layout_constraintVertical_bias="0.6" />
 
-        <Button
-            android:id="@+id/next"
+        <TextView
+            android:id="@+id/txtCnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 / 300"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.835"
+            app:layout_constraintHorizontal_bias="0.85"/>
+
+        <ImageButton
+            android:id="@+id/upload_btn"
             android:layout_width="170dp"
             android:layout_height="50dp"
+            android:src="@drawable/upload"
             android:background="#00ff0000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.953" />
+            app:layout_constraintVertical_bias="0.96" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

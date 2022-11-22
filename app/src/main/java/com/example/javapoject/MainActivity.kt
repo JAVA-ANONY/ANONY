@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, Center::class.java)
 
         //버튼 지정
-        val buttonView = findViewById<Button>(R.id.start)
+        val buttonView = findViewById<Button>(R.id.start_btn)
         //클릭리스너
         buttonView.setOnClickListener {
             //액티비티 이동
