@@ -13,6 +13,7 @@
         android:scaleType="fitXY">
 
         <EditText
+            android:id="@+id/edittext_title"
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:hint="제목을 입력해주세요"
