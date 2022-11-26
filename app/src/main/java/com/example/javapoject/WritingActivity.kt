@@ -1,15 +1,17 @@
 package com.example.javapoject
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.room.Room
 
 
 class WritingActivity : AppCompatActivity() {
@@ -20,7 +22,11 @@ class WritingActivity : AppCompatActivity() {
 
         val spinner = findViewById<Spinner>(R.id.spinner)
 
-        spinner.adapter = ArrayAdapter.createFromResource(this, R.array.spinner_arr, android.R.layout.simple_spinner_item)
+        spinner.adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.spinner_arr,
+            android.R.layout.simple_spinner_item
+        )
 
         //아이템 선택 리스너
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -70,32 +76,26 @@ class WritingActivity : AppCompatActivity() {
         var edittext_title = findViewById<EditText>(R.id.edittext_title)
 
 
+        val title = edittext_title.text.toString()
+        val sub = edittext.text.toString()
+
         //버튼 지정
         val buttonView = findViewById<ImageButton>(R.id.upload_btn)
         //클릭리스너
         buttonView.setOnClickListener {
-            val title = edittext_title.text.toString()
-            val sub = edittext.text.toString()
-
-            val listviewPlus: ListView
-            val adapterPlus: ListViewAdapter
-
-            // Adapter 생성
-            adapterPlus = ListViewAdapter()
-
-            // 리스트뷰 참조 및 Adapter달기
-            listviewPlus = findViewById<View>(R.id.listview1) as ListView
-            listviewPlus.adapter = adapterPlus
-
-            // 첫 번째 아이템 추가.
-            adapterPlus.addItem(
-                ContextCompat.getDrawable(this, R.drawable.img_like)!!,
-                "test", "test"
-            )
-
-            //액티비티 이동
-            intent.putExtra("title", edittext_title.text.toString())
-            startActivity(intent)
+            if (edittext_title.text.toString() == "") { // EditText가 비어있다면
+                Toast.makeText(this, "저장할 내용이 없습니다.", Toast.LENGTH_SHORT).show() // 안내 문구 출력
+            } else {
+                intent.putExtra(
+                    "newWriting",
+                    edittext_title.text.toString()
+                ) // 인텐트에 editText에 있는 내용 저장
+                setResult(Activity.RESULT_OK, intent) // 정상 실행 되었다는 뜻으로 RESULT_OK 설정
+                Toast.makeText(this, "글이 저장되었습니다.", Toast.LENGTH_SHORT).show() // 문구 출력
+                finish() // 돌아가기
+            }
         }
+
+
     }
 }
