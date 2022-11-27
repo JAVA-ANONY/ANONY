@@ -21,6 +21,7 @@ class WritingActivity : AppCompatActivity() {
         setContentView(R.layout.writing)
 
         val spinner = findViewById<Spinner>(R.id.spinner)
+        var grade: String = ""
 
         spinner.adapter = ArrayAdapter.createFromResource(
             this,
@@ -40,28 +41,26 @@ class WritingActivity : AppCompatActivity() {
                 when (position) {
                     //1학년
                     0 -> {
-
+                        grade = "1학년"
                     }
                     //2학년
                     1 -> {
-
-
+                        grade = "2학년"
                     }
                     //3학년
                     2 -> {
-
-
+                        grade = "3학년"
                     }
                     //일치하는게 없는 경우
                     else -> {
-
+                        grade = "1학년"
                     }
                 }
             }
         }
 
-        var edittext = findViewById<EditText>(R.id.editText)
-        val txtCnt = findViewById<TextView>(R.id.txtCnt)
+        var edittext = findViewById<EditText>(R.id.editText) // 내용
+        val txtCnt = findViewById<TextView>(R.id.txtCnt) // 내용의 글자수
 
         edittext.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -71,13 +70,15 @@ class WritingActivity : AppCompatActivity() {
             }
         })
 
-        val intent = Intent(this, UploadActivity::class.java)
+        val intent = Intent(this, CenterActivity::class.java)
 
-        var edittext_title = findViewById<EditText>(R.id.edittext_title)
+        var edittext_title = findViewById<EditText>(R.id.edittext_title) // 제목
 
 
         val title = edittext_title.text.toString()
         val sub = edittext.text.toString()
+
+        var temp = arrayOf(title, grade)
 
         //버튼 지정
         val buttonView = findViewById<ImageButton>(R.id.upload_btn)
@@ -89,6 +90,14 @@ class WritingActivity : AppCompatActivity() {
                 intent.putExtra(
                     "newWriting",
                     edittext_title.text.toString()
+                ) // 인텐트에 editText에 있는 내용 저장
+                intent.putExtra(
+                    "newGrade",
+                    grade
+                ) // 인텐트에 editText에 있는 내용 저장
+                intent.putExtra(
+                    "newSub",
+                    edittext.text.toString()
                 ) // 인텐트에 editText에 있는 내용 저장
                 setResult(Activity.RESULT_OK, intent) // 정상 실행 되었다는 뜻으로 RESULT_OK 설정
                 Toast.makeText(this, "글이 저장되었습니다.", Toast.LENGTH_SHORT).show() // 문구 출력
