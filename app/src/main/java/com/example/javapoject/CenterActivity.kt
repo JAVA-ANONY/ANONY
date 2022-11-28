@@ -4,17 +4,13 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemLongClickListener
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
-import java.io.Serializable
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-
 
 class CenterActivity : AppCompatActivity() {
     private val memos = ArrayList<String>() // 글을 저장할 배열
@@ -94,17 +90,5 @@ class CenterActivity : AppCompatActivity() {
             }
         }
     }
-}
-
-private fun Intent.putExtra(s: String, clicklist: View) {
-
-}
-
-class Room(
-    val title: String,
-    val time: String,
-    val grade: String
-// 상속받는 것처럼 구현
-) : Serializable {
 }
 
